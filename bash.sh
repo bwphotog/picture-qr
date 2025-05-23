@@ -7,3 +7,5 @@ git push -u origin master
 git add .
 git commit -m "เพิ่มระบบ JWT auth และ admin album management"
 git push origin main
+
+psql -U postgres -d pictureqr -f pgsql.sql
