@@ -20,3 +20,4 @@ CREATE TABLE photos (
   file_id TEXT,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
