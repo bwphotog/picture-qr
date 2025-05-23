@@ -1,3 +1,5 @@
+ALTER TABLE albums ADD COLUMN IF NOT EXISTS cover_photo_id TEXT;
+
 CREATE TABLE admins (
   id SERIAL PRIMARY KEY,
   username TEXT UNIQUE NOT NULL,
@@ -11,6 +13,7 @@ CREATE TABLE albums (
   folder_id TEXT,
   cover_photo_id TEXT,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  ALTER TABLE albums ADD COLUMN IF NOT EXISTS cover_photo_id TEXT;
 );
 
 CREATE TABLE photos (
