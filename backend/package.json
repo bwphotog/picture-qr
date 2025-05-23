@@ -1,6 +1,4 @@
-{"scripts": {
-  "start": "node server.js"
-}
+{
   "name": "picture-qr",
   "version": "1.0.0",
   "main": "server.js",
@@ -15,3 +13,4 @@
     "multer": "^1.4.5-lts.1"
   }
 }
+
