@@ -1,1 +1,16 @@
-https://picture-qr-backend.onrender.com
+services:
+  - type: web
+    name: picture-qr-backend
+    env: node
+    plan: free
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm start
+    envVars:
+      - key: GOOGLE_CLIENT_ID
+        fromEnvVar: GOOGLE_CLIENT_ID
+      - key: GOOGLE_CLIENT_SECRET
+        fromEnvVar: GOOGLE_CLIENT_SECRET
+      - key: JWT_SECRET
+        fromEnvVar: JWT_SECRET
+      - key: DATABASE_URL
+        fromEnvVar: DATABASE_URL
