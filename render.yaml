@@ -6,3 +6,13 @@ services:
     buildCommand: backend/ && npm install
     startCommand: backend/ && npm start
     rootDir: backend/
+
+
+  - type: web
+    name: your-app
+    env: node
+    buildCommand: |
+      ./init_db.sh
+      npm install
+    startCommand: node backend/server.js
+
