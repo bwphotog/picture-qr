@@ -9,3 +9,5 @@ git commit -m "เพิ่มระบบ JWT auth และ admin album manage
 git push origin main
 
 psql -U postgres -d pictureqr -f pgsql.sql
+
+chmod +x init_db.sh
