@@ -5,4 +5,4 @@ services:
     plan: free
     buildCommand: backend && npm install
     startCommand: backend && npm start
-    rootDir: backend
+    rootDir: backend/
