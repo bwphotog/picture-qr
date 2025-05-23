@@ -1,20 +1,20 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import AdminLogin from './pages/AdminLogin';
-import AdminUpload from './pages/AdminUpload';
-import SelectCover from './pages/SelectCover';
-import AlbumView from './pages/AlbumView';
+// frontend/src/App.jsx
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import AdminLogin from './pages/AdminLogin'
+import AdminPage from './pages/AdminPage'
+// ... import หน้าอื่นๆ
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/admin/login" element={<AdminLogin />} />
-        <Route path="/admin" element={<AdminUpload />} />
-        <Route path="/admin/:albumId/cover" element={<SelectCover />} />
-        <Route path="/album/:albumId" element={<AlbumView />} />
+        <Route path="/admin" element={<AdminPage />} />
+        {/* route หน้าอื่น ๆ */}
       </Routes>
     </Router>
-  );
+  )
 }
 
-export default App;
+export default App
