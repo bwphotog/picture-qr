@@ -1,0 +1,42 @@
+name: Deploy to Render
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+env:
+  DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v3
+
+      - name: 🐘 Install PostgreSQL client
+        run: sudo apt-get update && sudo apt-get install -y postgresql-client
+
+      - name: 🏗️ Run DB Init Script
+        run: |
+          chmod +x init_db.sh
+          ./init_db.sh
+
+      # ✨ Optional: Build/Deploy frontend/backend locally (if needed)
+      - name: 🔧 Build backend (optional)
+        run: |
+          cd backend
+          npm install
+          echo "✅ Backend ready"
+
+      - name: 🌐 Build frontend (optional)
+        run: |
+          cd frontend
+          npm install
+          echo "✅ Frontend ready"
+
+      - name: 🚀 Trigger Render Deploy via Deploy Hook
+        run: |
+          curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK_URL }}"
