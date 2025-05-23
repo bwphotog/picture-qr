@@ -3,6 +3,6 @@ services:
     name: picture-qr-backend
     env: node
     plan: free
-    buildCommand: cd backend && npm install
-    startCommand: cd backend && npm start
+    buildCommand: backend && npm install
+    startCommand: backend && npm start
     rootDir: backend
